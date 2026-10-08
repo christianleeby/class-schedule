@@ -6,32 +6,36 @@
   {
    "day": "Tuesday",
    "time": "6:00\u20136:45pm",
-   "starts": "",
    "status": "full",
-   "match": ""
+   "match": "",
+   "first_class": "2026-10-06",
+   "next_class": "Tue, Oct 13"
   },
   {
    "day": "Wednesday",
    "time": "6:00\u20136:45pm",
-   "starts": "Oct 21",
    "status": "open",
    "match": "4 Wednesdays",
-   "seats_left": 10
+   "first_class": "2026-10-21",
+   "seats_left": 10,
+   "next_class": "Wed, Oct 21"
   },
   {
    "day": "Saturday",
    "time": "9:45\u201310:30am",
-   "starts": "Oct 17",
    "status": "open",
    "match": "4 Saturdays 9:45",
-   "seats_left": 4
+   "first_class": "2026-10-17",
+   "seats_left": 4,
+   "next_class": "Sat, Oct 17"
   },
   {
    "day": "Saturday",
    "time": "10:45\u201311:30am",
-   "starts": "",
    "status": "full",
-   "match": ""
+   "match": "",
+   "first_class": "2026-10-03",
+   "next_class": "Sat, Oct 10"
   }
  ]
 }

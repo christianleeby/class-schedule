@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Builds schedule.json (+ index.html preview) for the live Body Fixing class schedule.
 Reads classes.json, pulls live seats from the ThriveCart checkout, marks sold-out options full."""
-import json, re, html, urllib.request, pathlib
+import json, re, html, urllib.request, pathlib, datetime
 HERE = pathlib.Path(__file__).resolve().parent
 cfg = json.loads((HERE / "classes.json").read_text())
 try:
@@ -21,6 +21,13 @@ for c in cfg["classes"]:
                 r = int(p.get("quantity_remaining") or 0)
                 c["seats_left"] = r
                 if r == 0: c["status"] = "full"
+DAYS = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+today = datetime.date.today()
+for c in cfg["classes"]:
+    first = datetime.date.fromisoformat(c.get("first_class", today.isoformat()))
+    nxt = today + datetime.timedelta(days=(DAYS.index(c["day"]) - today.weekday()) % 7)
+    nxt = max(nxt, first)
+    c["next_class"] = nxt.strftime("%a, %b ") + str(nxt.day)
 out = {k: cfg[k] for k in ("reserve_url", "phone", "email")}
 out["classes"] = cfg["classes"]
 (HERE / "schedule.json").write_text(json.dumps(out, indent=1))

@@ -1,12 +1,36 @@
 {
-  "_note": "Master list of Body Fixing classes. Noel edits this; the hourly job fills seats_left from the live ThriveCart checkout (match = checkout option text). status: open | full | soon",
-  "reserve_url": "https://christianleeby.thrivecart.com/4classes/",
-  "phone": "+13032162949",
-  "email": "christian@christianleeby.com",
-  "classes": [
-    {"day": "Tuesday",   "time": "6:00–6:45pm",   "starts": "",        "status": "full", "match": ""},
-    {"day": "Wednesday", "time": "6:00–6:45pm",   "starts": "Oct 21",  "status": "open", "match": "4 Wednesdays"},
-    {"day": "Saturday",  "time": "9:45–10:30am",  "starts": "Oct 17",  "status": "open", "match": "4 Saturdays 9:45"},
-    {"day": "Saturday",  "time": "10:45–11:30am", "starts": "",        "status": "full", "match": ""}
-  ]
+ "_note": "Master list of Body Fixing classes. Noel edits this. first_class = first-ever class date; the builder shows the NEXT class date (rolls forward weekly). seats_left filled hourly from the live ThriveCart checkout (match = checkout option text). status: open | full",
+ "reserve_url": "https://christianleeby.thrivecart.com/4classes/",
+ "phone": "+13032162949",
+ "email": "christian@christianleeby.com",
+ "classes": [
+  {
+   "day": "Tuesday",
+   "time": "6:00\u20136:45pm",
+   "status": "full",
+   "match": "",
+   "first_class": "2026-10-06"
+  },
+  {
+   "day": "Wednesday",
+   "time": "6:00\u20136:45pm",
+   "status": "open",
+   "match": "4 Wednesdays",
+   "first_class": "2026-10-21"
+  },
+  {
+   "day": "Saturday",
+   "time": "9:45\u201310:30am",
+   "status": "open",
+   "match": "4 Saturdays 9:45",
+   "first_class": "2026-10-17"
+  },
+  {
+   "day": "Saturday",
+   "time": "10:45\u201311:30am",
+   "status": "full",
+   "match": "",
+   "first_class": "2026-10-03"
+  }
+ ]
 }

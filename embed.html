@@ -40,7 +40,8 @@
              '<a class="btn wait" href="' + contact(d, msg) + '">Join the waitlist</a></div>';
       } else {
         var seats = (typeof c.seats_left === "number" && c.seats_left <= 5) ? '<div class="seats">Only ' + c.seats_left + ' spot' + (c.seats_left === 1 ? '' : 's') + ' left</div>' : '';
-        h += '<div class="row"><div class="when"><b>' + label + '</b><span>' + detail + '</span>' + seats + '</div>' +
+        var nxt = c.next_class ? "Next class: " + c.next_class : detail;
+        h += '<div class="row"><div class="when"><b>' + label + '</b><span>' + nxt + '</span>' + seats + '</div>' +
              '<a class="btn reserve" href="' + d.reserve_url + '">Reserve your spot</a></div>';
       }
     });
