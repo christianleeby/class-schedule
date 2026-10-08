@@ -1,0 +1,55 @@
+<!-- Body Fixing class schedule — paste into a Convertri "Custom HTML" element.
+     Reads schedule.json from SCHEDULE_URL (kept current by the hourly job). -->
+<div id="bf-schedule"></div>
+<style>
+  #bf-schedule{--plum:#3E1B4F;--plum2:#4F1964;--cream:#F6EEE0;--sand:#DDCFBC;--orange:#D97A57;--forest:#1E4D2B;
+    font-family:"Raleway",-apple-system,"Segoe UI",Roboto,sans-serif;max-width:640px;margin:0 auto;color:#2b2330}
+  #bf-schedule h3{font-size:26px;color:var(--plum);margin:0 0 4px;text-align:center;font-weight:700}
+  #bf-schedule .sub{text-align:center;margin:0 0 18px;font-size:16px;color:#5a4d63}
+  #bf-schedule .row{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--cream);
+    border:1px solid var(--sand);border-radius:12px;padding:14px 16px;margin:0 0 10px}
+  #bf-schedule .when b{display:block;font-size:18px;color:var(--plum)}
+  #bf-schedule .when span{font-size:14px;color:#6b5f73}
+  #bf-schedule .seats{font-size:13px;color:var(--forest);font-weight:600}
+  #bf-schedule a.btn{flex:none;text-decoration:none;font-weight:700;font-size:15px;border-radius:999px;padding:11px 18px;text-align:center;white-space:nowrap}
+  #bf-schedule a.reserve{background:var(--plum2);color:#fff}
+  #bf-schedule a.wait{background:#fff;color:var(--plum);border:2px solid var(--plum)}
+  #bf-schedule .full{opacity:.92}
+  #bf-schedule .full .when b:after{content:" · FULL";font-size:13px;color:var(--orange);font-weight:700}
+  #bf-schedule .price{text-align:center;font-size:15px;margin:14px 0 6px}
+  #bf-schedule .ideal{text-align:center;font-size:15px;margin:6px 0 0}
+  #bf-schedule .ideal a{color:var(--plum2);font-weight:700}
+  @media (max-width:480px){#bf-schedule .row{flex-direction:column;align-items:stretch;text-align:center}#bf-schedule a.btn{width:100%}}
+</style>
+<script>
+(function(){
+  var SCHEDULE_URL = "schedule.json";   // ← replace with the public URL once it's hosted
+  var mobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
+  function contact(d, msg){
+    return mobile ? "sms:" + d.phone + "&body=" + encodeURIComponent(msg)
+                  : "mailto:" + d.email + "?subject=" + encodeURIComponent("Body Fixing class") + "&body=" + encodeURIComponent(msg);
+  }
+  function render(d){
+    var h = '<h3>Body Fixing Yoga Classes</h3><p class="sub">45 minutes · 10 people max · downtown Golden</p>';
+    d.classes.forEach(function(c){
+      var label = c.day + " " + c.time;
+      var detail = "Four-class series";
+      if (c.status === "full") {
+        var msg = "Hi Christian, please add me to the waitlist for the " + label + " Body Fixing class. My name is ";
+        h += '<div class="row full"><div class="when"><b>' + label + '</b><span>' + detail + '</span></div>' +
+             '<a class="btn wait" href="' + contact(d, msg) + '">Join the waitlist</a></div>';
+      } else {
+        var seats = (typeof c.seats_left === "number" && c.seats_left <= 5) ? '<div class="seats">Only ' + c.seats_left + ' spot' + (c.seats_left === 1 ? '' : 's') + ' left</div>' : '';
+        h += '<div class="row"><div class="when"><b>' + label + '</b><span>' + detail + '</span>' + seats + '</div>' +
+             '<a class="btn reserve" href="' + d.reserve_url + '">Reserve your spot</a></div>';
+      }
+    });
+    h += '<p class="price"><b>4 classes for $50</b> to start · then membership from $99/month, cancel anytime</p>';
+    h += '<p class="ideal">Don\'t see a time that works? <a href="' + contact(d, "Hi Christian, please add me to the list for new Body Fixing classes. Days and times that would work for me: ") + '">Join the list to hear about new classes</a>.</p>';
+    document.getElementById("bf-schedule").innerHTML = h;
+  }
+  fetch(SCHEDULE_URL + "?t=" + Date.now()).then(function(r){return r.json()}).then(render)
+    .catch(function(){ document.getElementById("bf-schedule").innerHTML =
+      '<p style="text-align:center"><a href="https://christianleeby.thrivecart.com/4classes/">See class times &amp; reserve your spot</a></p>'; });
+})();
+</script>
