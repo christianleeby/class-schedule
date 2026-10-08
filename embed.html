@@ -23,7 +23,7 @@
 </style>
 <script>
 (function(){
-  var SCHEDULE_URL = "schedule.json";   // ← replace with the public URL once it's hosted
+  var SCHEDULE_URL = "https://raw.githubusercontent.com/christianleeby/class-schedule/main/schedule.json";
   var mobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
   function contact(d, msg){
     return mobile ? "sms:" + d.phone + "&body=" + encodeURIComponent(msg)
