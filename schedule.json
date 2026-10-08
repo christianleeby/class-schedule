@@ -9,7 +9,8 @@
    "status": "full",
    "match": "",
    "first_class": "2026-10-06",
-   "next_class": "Tue, Oct 13"
+   "next_class": "Tue, Oct 13",
+   "next_class_long": "October 13"
   },
   {
    "day": "Wednesday",
@@ -18,7 +19,8 @@
    "match": "4 Wednesdays",
    "first_class": "2026-10-21",
    "seats_left": 10,
-   "next_class": "Wed, Oct 21"
+   "next_class": "Wed, Oct 21",
+   "next_class_long": "October 21"
   },
   {
    "day": "Saturday",
@@ -27,7 +29,8 @@
    "match": "4 Saturdays 9:45",
    "first_class": "2026-10-17",
    "seats_left": 4,
-   "next_class": "Sat, Oct 17"
+   "next_class": "Sat, Oct 17",
+   "next_class_long": "October 17"
   },
   {
    "day": "Saturday",
@@ -35,7 +38,8 @@
    "status": "full",
    "match": "",
    "first_class": "2026-10-03",
-   "next_class": "Sat, Oct 10"
+   "next_class": "Sat, Oct 10",
+   "next_class_long": "October 10"
   }
  ]
 }

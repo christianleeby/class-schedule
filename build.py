@@ -28,6 +28,7 @@ for c in cfg["classes"]:
     nxt = today + datetime.timedelta(days=(DAYS.index(c["day"]) - today.weekday()) % 7)
     nxt = max(nxt, first)
     c["next_class"] = nxt.strftime("%a, %b ") + str(nxt.day)
+    c["next_class_long"] = nxt.strftime("%B ") + str(nxt.day)
 out = {k: cfg[k] for k in ("reserve_url", "phone", "email")}
 out["classes"] = cfg["classes"]
 (HERE / "schedule.json").write_text(json.dumps(out, indent=1))

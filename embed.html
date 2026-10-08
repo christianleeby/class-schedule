@@ -9,6 +9,7 @@
   #bf-schedule .row{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--cream);
     border:1px solid var(--sand);border-radius:12px;padding:14px 16px;margin:0 0 10px}
   #bf-schedule .when b{display:block;font-size:18px;color:var(--plum)}
+  #bf-schedule .when em{display:block;font-style:normal;font-size:16px;color:#2b2330;margin:2px 0}
   #bf-schedule .when span{font-size:14px;color:#6b5f73}
   #bf-schedule .seats{font-size:13px;color:var(--forest);font-weight:600}
   #bf-schedule a.btn{flex:none;text-decoration:none;font-weight:700;font-size:15px;border-radius:999px;padding:11px 18px;text-align:center;white-space:nowrap}
@@ -30,18 +31,18 @@
                   : "mailto:" + d.email + "?subject=" + encodeURIComponent("Body Fixing class") + "&body=" + encodeURIComponent(msg);
   }
   function render(d){
-    var h = '<h3>Body Fixing Yoga Classes</h3><p class="sub">45 minutes · 10 people max · downtown Golden</p>';
+    var h = '<h3>Class Options</h3><p class="sub">45 minutes · 10 people max · downtown Golden</p>';
     d.classes.forEach(function(c){
+      var plural = c.day + "s";
       var label = c.day + " " + c.time;
-      var detail = "Four-class series";
       if (c.status === "full") {
         var msg = "Hi Christian, please add me to the waitlist for the " + label + " Body Fixing class. My name is ";
-        h += '<div class="row full"><div class="when"><b>' + label + '</b><span>' + detail + '</span></div>' +
+        h += '<div class="row full"><div class="when"><b>' + plural + '</b><em>' + c.time + '</em><span>Four ' + plural + '</span></div>' +
              '<a class="btn wait" href="' + contact(d, msg) + '">Join the waitlist</a></div>';
       } else {
         var seats = (typeof c.seats_left === "number" && c.seats_left <= 5) ? '<div class="seats">Only ' + c.seats_left + ' spot' + (c.seats_left === 1 ? '' : 's') + ' left</div>' : '';
-        var nxt = c.next_class ? "Next class: " + c.next_class : detail;
-        h += '<div class="row"><div class="when"><b>' + label + '</b><span>' + nxt + '</span>' + seats + '</div>' +
+        var start = c.next_class_long ? "Four " + plural + ", starting " + c.next_class_long : "Four " + plural;
+        h += '<div class="row"><div class="when"><b>' + plural + '</b><em>' + c.time + '</em><span>' + start + '</span>' + seats + '</div>' +
              '<a class="btn reserve" href="' + d.reserve_url + '">Reserve your spot</a></div>';
       }
     });
