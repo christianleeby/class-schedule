@@ -13,14 +13,13 @@
    "next_class_long": "October 13"
   },
   {
-   "day": "Wednesday",
-   "time": "6:00\u20136:45pm",
+   "day": "Thursday",
+   "time": "11:00\u201311:45am",
    "status": "open",
-   "match": "4 Wednesdays",
-   "first_class": "2026-10-21",
-   "seats_left": 10,
-   "next_class": "Wed, Oct 21",
-   "next_class_long": "October 21"
+   "match": "4 Thursdays 11:00",
+   "first_class": "2026-10-29",
+   "next_class": "Thu, Oct 29",
+   "next_class_long": "October 29"
   },
   {
    "day": "Saturday",
@@ -29,7 +28,7 @@
    "match": "4 Saturdays 9:45",
    "first_class": "2026-10-17",
    "dropin": "https://christianleeby.thrivecart.com/dropin/",
-   "seats_left": 2,
+   "seats_left": 6,
    "next_class": "Sat, Oct 17",
    "next_class_long": "October 17"
   },
