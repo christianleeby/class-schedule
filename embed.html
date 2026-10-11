@@ -45,9 +45,9 @@
         var seats = (typeof c.seats_left === "number" && c.seats_left <= 5) ? '<div class="seats">Only ' + c.seats_left + ' spot' + (c.seats_left === 1 ? '' : 's') + ' left</div>' : '';
         var start = c.next_class_long ? "Four " + plural + ", starting " + c.next_class_long : "Four " + plural;
         h += '<div class="row"><div class="when"><b>' + plural + '</b><em>' + c.time + '</em><span>' + start + '</span>' + seats + '</div>' +
-             (c.dropin ? '<div class="acts"><a class="btn reserve" href="' + d.reserve_url + '">Reserve your spot</a>' +
-                         '<a class="btn drop" href="' + c.dropin + '">Drop in &middot; $30</a></div></div>'
-                       : '<a class="btn reserve" href="' + d.reserve_url + '">Reserve your spot</a></div>');
+             (c.dropin ? '<div class="acts"><a class="btn reserve" href="' + d.reserve_url + '" target="_blank" rel="noopener">Reserve your spot</a>' +
+                         '<a class="btn drop" href="' + c.dropin + '" target="_blank" rel="noopener">Drop in &middot; $30</a></div></div>'
+                       : '<a class="btn reserve" href="' + d.reserve_url + '" target="_blank" rel="noopener">Reserve your spot</a></div>');
       }
     });
     h += '<p class="price"><b>4 classes for $50</b> to start · then membership from $99/month, cancel anytime</p>';
@@ -56,6 +56,6 @@
   }
   fetch(SCHEDULE_URL + "?t=" + Date.now()).then(function(r){return r.json()}).then(render)
     .catch(function(){ document.getElementById("bf-schedule").innerHTML =
-      '<p style="text-align:center"><a href="https://christianleeby.thrivecart.com/4classes/">See class times &amp; reserve your spot</a></p>'; });
+      '<p style="text-align:center"><a href="https://christianleeby.thrivecart.com/4classes/" target="_blank" rel="noopener">See class times &amp; reserve your spot</a></p>'; });
 })();
 </script>
