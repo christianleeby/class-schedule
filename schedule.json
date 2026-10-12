@@ -25,11 +25,11 @@
   {
    "day": "Saturday",
    "time": "9:45\u201310:30am",
-   "status": "open",
+   "status": "full",
    "match": "4 Saturdays 9:45",
    "first_class": "2026-10-17",
    "dropin": "https://christianleeby.thrivecart.com/dropin/",
-   "seats_left": 2,
+   "seats_left": 0,
    "next_class": "Sat, Oct 17",
    "next_class_long": "October 17"
   },
