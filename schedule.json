@@ -9,7 +9,7 @@
    "status": "open",
    "match": "4 Tuesdays 6:00",
    "first_class": "2026-11-10",
-   "seats_left": 6,
+   "seats_left": 5,
    "next_class": "Tue, Nov 10",
    "next_class_long": "November 10"
   },
@@ -29,7 +29,7 @@
    "status": "open",
    "match": "4 Thursdays 11:00",
    "first_class": "2026-10-29",
-   "seats_left": 3,
+   "seats_left": 1,
    "next_class": "Thu, Nov 12",
    "next_class_long": "November 12"
   },
