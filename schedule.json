@@ -26,10 +26,10 @@
   {
    "day": "Thursday",
    "time": "11:00\u201311:45am",
-   "status": "open",
+   "status": "full",
    "match": "4 Thursdays 11:00",
    "first_class": "2026-10-29",
-   "seats_left": 1,
+   "seats_left": 0,
    "next_class": "Thu, Nov 12",
    "next_class_long": "November 12"
   },
