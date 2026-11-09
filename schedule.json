@@ -16,22 +16,22 @@
   {
    "day": "Wednesday",
    "time": "6:00\u20136:45pm",
-   "status": "full",
+   "status": "open",
    "match": "4 Wednesdays 6:00",
-   "first_class": "2026-10-28",
-   "seats_left": 0,
-   "next_class": "Wed, Nov 11",
-   "next_class_long": "November 11"
+   "first_class": "2026-12-02",
+   "seats_left": 3,
+   "next_class": "Wed, Dec 2",
+   "next_class_long": "December 2"
   },
   {
    "day": "Thursday",
    "time": "11:00\u201311:45am",
-   "status": "full",
+   "status": "open",
    "match": "4 Thursdays 11:00",
-   "first_class": "2026-10-29",
-   "seats_left": 0,
-   "next_class": "Thu, Nov 12",
-   "next_class_long": "November 12"
+   "first_class": "2026-12-03",
+   "seats_left": 3,
+   "next_class": "Thu, Dec 3",
+   "next_class_long": "December 3"
   },
   {
    "day": "Saturday",
