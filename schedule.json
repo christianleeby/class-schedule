@@ -6,12 +6,12 @@
   {
    "day": "Tuesday",
    "time": "6:00\u20136:45pm",
-   "status": "full",
+   "status": "open",
    "match": "4 Tuesdays 6:00",
-   "first_class": "2026-11-24",
-   "seats_left": 0,
-   "next_class": "Tue, Dec 1",
-   "next_class_long": "December 1"
+   "first_class": "2026-12-08",
+   "seats_left": 4,
+   "next_class": "Tue, Dec 8",
+   "next_class_long": "December 8"
   },
   {
    "day": "Wednesday",
@@ -19,7 +19,7 @@
    "status": "open",
    "match": "4 Wednesdays 6:00",
    "first_class": "2026-12-02",
-   "seats_left": 2,
+   "seats_left": 1,
    "next_class": "Wed, Dec 2",
    "next_class_long": "December 2"
   },
